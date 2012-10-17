@@ -1,0 +1,47 @@
+## Properties in this file will be read when running in DEVELOPMENT mode
+
+jetty.emb.port=9090
+#used by self serving embedded jetty jar - /tmp is not a good choice
+#as it gets cleaned from time to time, use something else in production
+jetty.emb.tmpdir=/tmp/liftrulez.com
+
+#should we show servlets under /servlet
+show.servlets=true
+#show.servlets=false
+
+#session wrapper db transaction logging
+log.dbsession=true
+#log.dbsession=false
+
+#which db driver should we use
+use.db=H2
+#use.db=MySQL
+#use.db=PostgreSql
+
+##db drop and recreate data?
+#db.schemify=false
+db.schemify=true
+
+##h2 web console accessible at localhost:8080/console
+
+##h2 db setup
+H2.db.driver=org.h2.Driver
+##in memory db - will cease to exist when webapp is exited
+H2.db.url=jdbc:h2:mem:liftrulez_com;LOCK_TIMEOUT=3000
+##in file db adjust it to use the file of your choice - will survive
+#H2.db.url=jdbc:h2:/tmp/h2_liftrulez_com;LOCK_TIMEOUT=3000
+##db credentials
+H2.db.user=test
+H2.db.pass=
+
+##mysql db setup
+MySQL.db.driver=com.mysql.jdbc.Driver
+MySQL.db.url=jdbc:mysql://localhost:3306/liftrulez
+MySQL.db.user=sitemngr
+MySQL.db.pass=etis10
+
+##postgres db setup
+PostgreSql.db.driver=org.postgresql.Driver
+PostgreSql.db.url=jdbc:postgresql://localhost:5432/liftrulez
+PostgreSql.db.user=sitemngr
+PostgreSql.db.ostgreSql.db.pass=etis10

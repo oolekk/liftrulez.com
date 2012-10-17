@@ -1,0 +1,106 @@
+<html>
+<head>
+<script id="jquery" src="/js/jquery-1.8.1.min.js" type="text/javascript"></script>
+<style type="text/css">
+/* <![CDATA[ */
+body{
+	font-family: Consolas,"Liberation Mono",Courier,monospace;
+	text-align: center;
+	background: #EEEEEE;
+}
+.main{
+	width: 800px;
+	text-align: justify;
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 auto;
+	padding: 0 20px;
+	border: 1px solid #CCCCCC;
+}
+h1{font-size:1.5em}
+code {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    display: block;
+    margin-left: 1em;
+}
+/* ]]> */
+</style>
+</head>
+<body>
+<div class="main">
+	
+<h2>liftrulez.com running on squeryl-record + embedded + jetty</h2>
+
+<p>There is embedded jetty and assembly sbt plugin for automated creation
+of self-serving jar package.</p>
+
+<p>This app is in a very early stage of development. The aim is to provide
+Norton-Commander like experience, so that there are two panes for 
+browsing the server directories. Functionality will be provided
+to do copy/delete/rename/upload and do batch processing of whole trees
+of images possibly storing useful data about images in custom file
+attributes, so as a meta-data of the file itself without the need to
+keep every detail in the database (for example image size in px or
+hash sum).</p>
+
+<p>This project front-end will be developed using haml and livescript
+instead of html and javascript. LiveScript provides Haskel inpired
+alternative to JavaScript and compiles down to regular JavaScript.
+Additionaly prelude library is used to provide usual set of functional
+style map/list operations.</p>
+
+<p>To streamline CSS generation and CSS or JavaScript includes as well
+as sprite image generation we use Middleman with Compass. Not much is
+done so far about the frontend, but all the general setup for 
+middleman is in place and already used.</p>
+
+<p>Apart from showing sample setup of squeryl-record with different database
+engines, this app includes a working configuration for building
+self-serving jar with embedded jetty. It is a very lightweight and flexible
+way to easily do deployment on any computer that has java. To create the
+jar, in sbt run:</p>
+
+<pre><code>assembly
+</code></pre>
+
+<p>Then cd to target dir and run:</p>
+
+<pre><code>java -jar liftrulez.com-lift.jar
+</code></pre>
+
+<p>You can make it run in production mode like so:</p>
+
+<pre><code>java -Drun.mode=production -jar liftrulez.com-lift.jar
+</code></pre>
+
+<p>You can give custom port number to be used by jetty:</p>
+
+<pre><code>java -jar liftrulez.com-lift.jar 8090
+</code></pre>
+
+<p>I also made a script to make this app run as a normal linux service
+installed under /etc/init.d , soon more about this. I was messing around
+with the passwords a bit, so in case something is wrong, please check
+properties files.</p>
+
+<p>In development mode, h2 console will be browser accessible at: <br />
+<a href="http://localhost:9090/console">http://localhost:9090/console</a> <br />
+You may need to change port number to port given on the command line when starting
+executable jar or to default 8080 used by sbt if run from sbt. At the h2 console
+login screen, JDBC URL must be adjusted to something like this:</p>
+
+<pre><code>jdbc:h2:mem:liftrulez_com
+</code></pre>
+
+<p>Use login name 'test' and a blank password. This can be changed by
+editing props files. </p>
+
+<h3>Credits</h3>
+
+<p>Embedded jetty configuration assembled by me with 
+
+
+</div>
+</body>
+</html>

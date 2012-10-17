@@ -1,0 +1,15 @@
+%div(data-lift='l:surround?with=base&at=lcntnt')
+  #loginForm
+    %form(class='l:loginForm' form='POST')
+      #loginHolder
+        %table
+          %tr
+            %td User:&nbsp;&nbsp;&nbsp;
+            %td#loginName USER
+          %tr
+            %td Pass:&nbsp;&nbsp;&nbsp;
+            %td#loginPass PASS
+          %tr
+            %td &nbsp;
+            %td#loginSbmt LOG-IN
+        %div(data-lift='l:msgs?showAll=true') 

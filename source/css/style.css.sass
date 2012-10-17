@@ -1,0 +1,67 @@
+@import boil-top
+@import 960/grid
+$ninesixty-columns: 24
+.wrap24
+  @include grid-system(24)
+  margin: 0 auto
+@import compass
+@import compass/css3
+@import compass/css3/background-size
+
+@include font-face("LinBiolinum-rah", font-files( "linbiolinum_rah-webfont.woff", woff, "linbiolinum_rah-webfont.ttf", ttf, "linbiolinum_rah-webfont.svg", svg), "linbiolinum_rah-webfont.eot", normal, normal)
+
+@import BASIC
+@import notices
+@import manager
+
+$lightBlue: #0699d9
+$mediumBlue: #0545ac
+$darkerBlue: #021e8a
+
+$szA: 5px
+$szB: 10px
+$szC: 15px
+$szD: 20px
+
+// prevent shaking as result of sidebar appearing or not
+// depending on site length or window size. instead make
+// document body always large enough to force sidebar.
+html
+  height: 100%
+body
+  min-height: 100.0%
+  margin-bottom: 1px
+  overflow-y: scroll
+
+@mixin ltz($l: 0, $t: 0, $z: 0, $p: relative)
+  left: $l
+  top: $t
+  z-index: $z
+  position: $p
+
+@mixin wh($w: auto, $h: auto)
+  width: $w
+  height: $h
+
+#loginForm
+  text-align: center
+  #loginHolder
+    table
+      margin: 50px auto
+
+
+.waterbg
+  @include ltz(0, 25px, -1, fixed)
+  @include wh
+  @include background-size(100%, auto)
+  @include border-radius($szA)
+  background:
+    image: image-url('pg_bg01-1200.jpg')
+    repeat: no-repeat
+    position: center top
+
+
+#main-content
+  margin: 0
+
+@import boil-bot

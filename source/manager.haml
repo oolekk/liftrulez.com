@@ -1,0 +1,41 @@
+%div(data-lift='surround?with=base&at=lcntnt')
+  %l:tail
+    %script(src='js/manager.js' type='text/javascript')
+  #status.cf
+    %div#msessages(class='l:msgs showAll=true') 
+  #main-content.grid_18{:role => 'main'}>
+    %div(data-lift='l:LeftRightBrowser')
+      .tailScript
+        TAIL SCRIPT GOES HERE
+      .panes#main
+        .pane
+          .createFod
+            .upload<
+              %span.uploadField(title='select file(s)')>
+              %span.uploadBttn(title='start uploading')>
+          .dirHead
+            %input.MasterFlip(type='button' value='~' title='flip selection')>
+            %input.renameAll(type='button' value='rename' title='rename checked entries')>
+            %input.linkAll(type='button' value='link >' title='make links to checked entries in the other dir')>
+            %input.cloneAll(type='button' value='clone >' title='clone checked entries to the other dir')>
+            %input.copyAll(type='button' value='copy >' title='copy checked entries to the other dir')>
+            %input.moveAll(type='button' value='move >' title='move checked entries to the other dir')>
+            .inlineBlock
+              %input.recDeleteAll(type='button' value='!DEL!' title='recursively delete checked entries')>
+              %input.deleteAll(type='button' value='&nbsp;del&nbsp;' title='delete checked entries')>
+          .parentLine.cf
+            .newFod
+              %input.newFodName(type='text' size='10' title='name for new file or dir')
+              %input.dirCreateBttn(type='button' value='D+' title='add new dir')>
+              %input.fileCreateBttn(type='button' value='F+' title='add empty file')>
+            .parentBox
+              %input.MasterCheck(type='checkbox' title='select/deselect all')>
+              %span.parent
+          .dirRows
+            .dirRow<
+              %input.check(type='checkbox')>
+              %span.dirName>
+          .fileRows
+            .fileRow<
+              %input.check(type='checkbox')>
+              %span.fileName>

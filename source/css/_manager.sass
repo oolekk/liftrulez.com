@@ -1,0 +1,76 @@
+.panes
+  display: table
+  margin: 2px
+  width: 100%
+  border:
+    style: solid
+    width: 1px
+    color: #ccc
+  input,button
+    margin: 1px 1px 0 1px
+    padding: 0 2px
+  hr
+    margin: 2px 0
+  a
+    text-decoration: none
+    &:visited
+      color: blue
+    &:hover
+      color: red
+    &:active
+      color: purple
+  #leftPane,#rightPane
+    display: table-cell
+    vertical-align: top
+    >div
+      padding: 0 5px
+    background: #fff
+    border:
+      style: solid
+      width: 1px
+      color: #ccc
+    .dirHead,.createFod
+      padding: 1px 0
+      background: #e0e0ff
+    .createFod
+      input, button
+        padding: 1px
+    .upload
+      display: inline-block
+      background: #fff
+    .dirHead
+      padding-bottom: 2px
+      border-bottom: 1px solid #ccc
+    .uploadField
+      border: 
+        style: solid
+        width: 1px
+        color: #e0e0e0
+      background: #fff
+    .parentLine
+      text-align: right
+      padding-right: 0
+      background: beige
+      border-bottom: 1px solid #ccc
+    .parentBox
+      display: inline-block
+      float: left
+      text-align: left
+    .dirCreateBttn,.fileCreateBttn
+      margin: 1px 0 0 0
+      padding: 0 2px
+    .parentBttn
+      padding: 0 4px
+      margin: 1px 4px 0px 4px
+    .parent
+      color: purple
+    .newFod
+      display: inline-block
+    .dirRows
+      background: #e0ffe0
+      .dirName
+        margin-left: 4px
+    .fileRows
+      background: #fff
+      .fileName
+        margin-left: 4px
