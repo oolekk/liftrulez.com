@@ -101,7 +101,7 @@ object Start extends Logger {
      * we don't want these resorces beign cleaned up by jetty when we redeploy
      * our webapp.
      */
-    val resHandlerOne = makeResourceHandler("/served", "/var/www/liftrulez.com/external-resources/served", true, false)
+    val resHandlerOne = makeResourceHandler("/served", "/var/www/liftrulez.com/external-resources/served", false, false)
     val resHandlerTwo = makeResourceHandler("/listed", "/var/www/luftrulez.com/external-resources/listed", true, false)
     val handlerList = new HandlerList()
     /* IMPORTANT: order in the array matters, webctx should come last */
